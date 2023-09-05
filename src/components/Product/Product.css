@@ -1,0 +1,39 @@
+.product{
+    position: relative;
+    width: 300px;
+    border-radius: 8px;
+    border: 1px solid #95A0A7;
+    text-align: center;
+    overflow: hidden;
+}
+.product img{
+    width: 286px;
+    height: 286px;
+    border-radius: 8px;
+    padding-top: 7px;
+}
+.product-info-container{
+    text-align: left;
+    padding: 14px;
+    margin-bottom: 2rem;
+}
+
+.manufacturer{
+    margin-top: 45px;
+}
+.product button{
+    width: 100%;
+    padding: 14px 97px;
+    background: #FFE0B3;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: background 0.6s;
+}
+
+.product button:hover{
+    background: #ff9900;
+}

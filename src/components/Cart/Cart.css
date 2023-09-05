@@ -1,0 +1,11 @@
+.cart{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: rgba(255, 153, 0, 0.30);
+    padding: 25px;
+}
+
+.cart p{
+    font-size: 17px;
+}
