@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Shop.css";
 import Product from "../Product/Product";
 import Cart from "../Cart/Cart";
-import { addToDb, getShoppingCart } from "../../utilities/fakedb";
+import { addToDb, deleteShoppingCart, getShoppingCart } from "../../utilities/fakedb";
+import { NavLink } from "react-router-dom";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -34,21 +35,29 @@ const Shop = () => {
   const handleAddToCart = (product) => {
     addToDb(product.id)
 
-    let newCart=[]
+    let newCart = []
     // check whether the new item already exist
-    const recentAdded = cart.find(cartItem => cartItem.id===product.id)
-    if(recentAdded){
-      recentAdded['quantity']+=1
-      const restCart=cart.filter(cartItem=> cartItem.id!==recentAdded.id)
-      newCart=[...restCart, recentAdded]
+    const recentAdded = cart.find(cartItem => cartItem.id === product.id)
+    if (recentAdded) {
+      recentAdded['quantity'] += 1
+      const restCart = cart.filter(cartItem => cartItem.id !== recentAdded.id)
+      newCart = [...restCart, recentAdded]
     }
-    else{
-      product['quantity']=1
-      newCart=[...cart, product]
+    else {
+      product['quantity'] = 1
+      newCart = [...cart, product]
     }
 
     setCart(newCart);
   };
+
+  const clearEntireCart = () => {
+    const response = confirm('are you sure?')
+    if (response) {
+
+      deleteShoppingCart()
+    }
+  }
 
   return (
     <div className="shop-container">
@@ -63,7 +72,14 @@ const Shop = () => {
       </div>
 
       <div className="cart-container">
-        <Cart cart={cart} />
+        <Cart cart={cart} clearEntireCart={clearEntireCart}>
+          <NavLink to='/orders'>
+            <button className="conditional-button">
+              Review Orders
+            </button>
+          </NavLink>
+        </Cart>
+
       </div>
     </div>
   );

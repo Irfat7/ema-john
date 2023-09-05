@@ -1,0 +1,93 @@
+.review-item-container {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #95a0a7;
+  width: 571px;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.review-item-container > div {
+  display: flex;
+  gap: 20px;
+}
+
+.review-item-container > div > img {
+  width: 91px;
+  height: 91px;
+  border-radius: 6px;
+  align-self: center;
+}
+.review-item-container > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.review-item-container > div > div > h3 {
+  color: #1c2b35;
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: 0.032px;
+  width: 20ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.review-item-container > div > div > p {
+  color: #1c2b35;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.038px;
+}
+
+.review-item-container > div > div > p > span {
+  color: #f90;
+  font-size: 15px;
+  letter-spacing: 0.038px;
+}
+
+.review-item-container>button {
+  border: none;
+  background: rgba(235, 87, 87, 0.3);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  align-self: center;
+  cursor: pointer;
+}
+
+.delete-fw {
+  width: 50%;
+  height: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .review-item-container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #95a0a7;
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+  }
+  .review-item-container > div {
+    display: flex;
+    gap: 10px;
+  }
+  .review-item-container > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .review-item-container > div > div > h3 {
+    color: #1c2b35;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.032px;
+    width: 20ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

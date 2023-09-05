@@ -17,4 +17,12 @@ const cartProductsLoader = async () => {
   return savedCart;
 };
 
-export default cartProductsLoader;
+/* const clearEntireCart = () => {
+  const response = confirm('are you sure?')
+  if (response) {
+      setCart([])
+      deleteShoppingCart()
+  }
+} */
+
+export default cartProductsLoader/* , clearEntireCart */;

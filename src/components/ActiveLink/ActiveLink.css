@@ -3,3 +3,11 @@
     background: #ff9900 !important;
     color: black !important;
 }
+
+@media only screen and (max-width: 600px) {
+    .active{
+        color:red !important;
+        background: #ff9900 !important;
+        color: black !important;
+    }
+}

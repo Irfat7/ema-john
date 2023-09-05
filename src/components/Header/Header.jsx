@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../images/Logo.svg";
 import "./Header.css";
 import ActiveLink from "../ActiveLink/ActiveLink";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars,faCircleXmark } from '@fortawesome/free-solid-svg-icons'
+
 
 const Header = () => {
+  const [visible, setVisible] = useState(false)
+
   return (
     <div className="header-container">
       <nav>
-        <a href="#">
+        <Link to='/'>
           <img className="logo" src={logo} alt="" />
-        </a>
+        </Link>
 
-        <div className="nav-link-container">
+        <button onClick={()=>setVisible(!visible)} className="toggle"> {visible ? <FontAwesomeIcon className="fa-2xl" icon={faCircleXmark} style={{color: "#ffffff",}} /> : <FontAwesomeIcon className="fa-2xl" style={{color:'white'}} icon={faBars}/>} </button>
+        <div className={`nav-link-container ${visible && 'navVisible'}`}>
           <ActiveLink to="/">Shop</ActiveLink>
           <ActiveLink to="/orders">Orders</ActiveLink>
           <ActiveLink to="/inventory">Inventory</ActiveLink>
